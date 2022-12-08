@@ -121,6 +121,7 @@ Router(config-subif)#ip address 10.0.20.100 255.255.255.0
 Router(config-subif)#exit
 ```
 
+## Проверка
 STP:
 
 
