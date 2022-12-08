@@ -122,7 +122,36 @@ Router(config-subif)#exit
 STP:
 
 
-Пинги (с VPC2 на VPC1):
+Пинги:
+с VPC1 на VPC2
+```
+VPCS> ping 10.0.20.2 
+
+84 bytes from 10.0.20.2 icmp_seq=1 ttl=63 time=5.865 ms
+84 bytes from 10.0.20.2 icmp_seq=2 ttl=63 time=4.172 ms
+84 bytes from 10.0.20.2 icmp_seq=3 ttl=63 time=2.590 ms
+84 bytes from 10.0.20.2 icmp_seq=4 ttl=63 time=4.827 ms
+84 bytes from 10.0.20.2 icmp_seq=5 ttl=63 time=4.099 ms
+
+VPCS> ping 10.0.20.100
+
+84 bytes from 10.0.20.100 icmp_seq=1 ttl=255 time=2.457 ms
+84 bytes from 10.0.20.100 icmp_seq=2 ttl=255 time=1.772 ms
+84 bytes from 10.0.20.100 icmp_seq=3 ttl=255 time=2.953 ms
+84 bytes from 10.0.20.100 icmp_seq=4 ttl=255 time=1.988 ms
+84 bytes from 10.0.20.100 icmp_seq=5 ttl=255 time=2.507 ms
+
+VPCS> ping 10.0.10.100
+
+84 bytes from 10.0.10.100 icmp_seq=1 ttl=255 time=1.988 ms
+84 bytes from 10.0.10.100 icmp_seq=2 ttl=255 time=3.038 ms
+84 bytes from 10.0.10.100 icmp_seq=3 ttl=255 time=1.977 ms
+84 bytes from 10.0.10.100 icmp_seq=4 ttl=255 time=1.740 ms
+84 bytes from 10.0.10.100 icmp_seq=5 ttl=255 time=1.365 ms
+
+```
+
+с VPC2 на VPC1
 ```
 VPCS> ping 10.0.10.1          
 
