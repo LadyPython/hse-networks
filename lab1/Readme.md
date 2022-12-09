@@ -1,6 +1,6 @@
 # Реализация небольшой сети офиса
 ## Топология
-<img src="https://user-images.githubusercontent.com/6313540/206579315-0a3d48d1-a875-451d-94b6-791921a6ea80.jpeg" width="300"/>
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/6313540/206579315-0a3d48d1-a875-451d-94b6-791921a6ea80.jpeg">
 
 ## Настройка
 ```bash
@@ -127,6 +127,7 @@ Router(config-subif)#exit
 
 ## Проверка
 STP:
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
 
 
 Пинги:
