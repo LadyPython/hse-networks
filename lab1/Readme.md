@@ -126,93 +126,95 @@ Router(config)#exit
 ## Проверка
 * STP:
 
-на S1
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
+  на S1
 
-на S2
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206616074-26672755-5485-4a9f-900c-326738b8d228.png">
+  <img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
 
-Видно, что выбрался правильный рут и заблочился нужный линк.
+  на S2
+
+  <img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206616074-26672755-5485-4a9f-900c-326738b8d228.png">
+
+  Видно, что выбрался правильный рут и заблочился нужный линк.
 
 
 * Пинги:
 
-с VPC1 на VPC2
-```
-VPCS> ping 10.0.20.2 
+  с VPC1 на VPC2
+  ```
+  VPCS> ping 10.0.20.2 
 
-84 bytes from 10.0.20.2 icmp_seq=1 ttl=63 time=5.865 ms
-84 bytes from 10.0.20.2 icmp_seq=2 ttl=63 time=4.172 ms
-84 bytes from 10.0.20.2 icmp_seq=3 ttl=63 time=2.590 ms
-84 bytes from 10.0.20.2 icmp_seq=4 ttl=63 time=4.827 ms
-84 bytes from 10.0.20.2 icmp_seq=5 ttl=63 time=4.099 ms
+  84 bytes from 10.0.20.2 icmp_seq=1 ttl=63 time=5.865 ms
+  84 bytes from 10.0.20.2 icmp_seq=2 ttl=63 time=4.172 ms
+  84 bytes from 10.0.20.2 icmp_seq=3 ttl=63 time=2.590 ms
+  84 bytes from 10.0.20.2 icmp_seq=4 ttl=63 time=4.827 ms
+  84 bytes from 10.0.20.2 icmp_seq=5 ttl=63 time=4.099 ms
 
-VPCS> ping 10.0.20.100
+  VPCS> ping 10.0.20.100
 
-84 bytes from 10.0.20.100 icmp_seq=1 ttl=255 time=2.457 ms
-84 bytes from 10.0.20.100 icmp_seq=2 ttl=255 time=1.772 ms
-84 bytes from 10.0.20.100 icmp_seq=3 ttl=255 time=2.953 ms
-84 bytes from 10.0.20.100 icmp_seq=4 ttl=255 time=1.988 ms
-84 bytes from 10.0.20.100 icmp_seq=5 ttl=255 time=2.507 ms
+  84 bytes from 10.0.20.100 icmp_seq=1 ttl=255 time=2.457 ms
+  84 bytes from 10.0.20.100 icmp_seq=2 ttl=255 time=1.772 ms
+  84 bytes from 10.0.20.100 icmp_seq=3 ttl=255 time=2.953 ms
+  84 bytes from 10.0.20.100 icmp_seq=4 ttl=255 time=1.988 ms
+  84 bytes from 10.0.20.100 icmp_seq=5 ttl=255 time=2.507 ms
 
-VPCS> ping 10.0.10.100
+  VPCS> ping 10.0.10.100
 
-84 bytes from 10.0.10.100 icmp_seq=1 ttl=255 time=1.988 ms
-84 bytes from 10.0.10.100 icmp_seq=2 ttl=255 time=3.038 ms
-84 bytes from 10.0.10.100 icmp_seq=3 ttl=255 time=1.977 ms
-84 bytes from 10.0.10.100 icmp_seq=4 ttl=255 time=1.740 ms
-84 bytes from 10.0.10.100 icmp_seq=5 ttl=255 time=1.365 ms
+  84 bytes from 10.0.10.100 icmp_seq=1 ttl=255 time=1.988 ms
+  84 bytes from 10.0.10.100 icmp_seq=2 ttl=255 time=3.038 ms
+  84 bytes from 10.0.10.100 icmp_seq=3 ttl=255 time=1.977 ms
+  84 bytes from 10.0.10.100 icmp_seq=4 ttl=255 time=1.740 ms
+  84 bytes from 10.0.10.100 icmp_seq=5 ttl=255 time=1.365 ms
 
-```
+  ```
 
-с VPC2 на VPC1
-```
-VPCS> ping 10.0.10.1          
+  с VPC2 на VPC1
+  ```
+  VPCS> ping 10.0.10.1          
 
-84 bytes from 10.0.10.1 icmp_seq=1 ttl=63 time=6.049 ms
-84 bytes from 10.0.10.1 icmp_seq=2 ttl=63 time=3.957 ms
-84 bytes from 10.0.10.1 icmp_seq=3 ttl=63 time=4.274 ms
-84 bytes from 10.0.10.1 icmp_seq=4 ttl=63 time=3.989 ms
-84 bytes from 10.0.10.1 icmp_seq=5 ttl=63 time=3.514 ms
+  84 bytes from 10.0.10.1 icmp_seq=1 ttl=63 time=6.049 ms
+  84 bytes from 10.0.10.1 icmp_seq=2 ttl=63 time=3.957 ms
+  84 bytes from 10.0.10.1 icmp_seq=3 ttl=63 time=4.274 ms
+  84 bytes from 10.0.10.1 icmp_seq=4 ttl=63 time=3.989 ms
+  84 bytes from 10.0.10.1 icmp_seq=5 ttl=63 time=3.514 ms
 
-VPCS> ping 10.0.10.100
+  VPCS> ping 10.0.10.100
 
-84 bytes from 10.0.10.100 icmp_seq=1 ttl=255 time=2.635 ms
-84 bytes from 10.0.10.100 icmp_seq=2 ttl=255 time=2.324 ms
-84 bytes from 10.0.10.100 icmp_seq=3 ttl=255 time=1.657 ms
-84 bytes from 10.0.10.100 icmp_seq=4 ttl=255 time=2.372 ms
-84 bytes from 10.0.10.100 icmp_seq=5 ttl=255 time=1.698 ms
+  84 bytes from 10.0.10.100 icmp_seq=1 ttl=255 time=2.635 ms
+  84 bytes from 10.0.10.100 icmp_seq=2 ttl=255 time=2.324 ms
+  84 bytes from 10.0.10.100 icmp_seq=3 ttl=255 time=1.657 ms
+  84 bytes from 10.0.10.100 icmp_seq=4 ttl=255 time=2.372 ms
+  84 bytes from 10.0.10.100 icmp_seq=5 ttl=255 time=1.698 ms
 
-VPCS> ping 10.0.20.100
+  VPCS> ping 10.0.20.100
 
-84 bytes from 10.0.20.100 icmp_seq=1 ttl=255 time=2.154 ms
-84 bytes from 10.0.20.100 icmp_seq=2 ttl=255 time=1.364 ms
-84 bytes from 10.0.20.100 icmp_seq=3 ttl=255 time=1.439 ms
-84 bytes from 10.0.20.100 icmp_seq=4 ttl=255 time=2.552 ms
-84 bytes from 10.0.20.100 icmp_seq=5 ttl=255 time=2.707 ms
-```
+  84 bytes from 10.0.20.100 icmp_seq=1 ttl=255 time=2.154 ms
+  84 bytes from 10.0.20.100 icmp_seq=2 ttl=255 time=1.364 ms
+  84 bytes from 10.0.20.100 icmp_seq=3 ttl=255 time=1.439 ms
+  84 bytes from 10.0.20.100 icmp_seq=4 ttl=255 time=2.552 ms
+  84 bytes from 10.0.20.100 icmp_seq=5 ttl=255 time=2.707 ms
+  ```
 
 
 * Отказоустойчивость:
-1. Отключила интервейс между S0 и S1
-```
-root@eve-ng:~# telnet 192.168.82.93 32773
-Switch>enable
-Switch#configure terminal
-Switch(config)#interface e0/1
-Switch(config-if)#shutdown
-Switch(config-if)#exit
-Switch(config)#exit
-Switch#exit
-```
-2. Проверила пинги между клиентами
-```
-root@eve-ng:~# telnet 192.168.82.93 32769
-VPCS> ping 10.0.20.2
+  1. Отключила интерфейс между S0 и S1
+  ```
+  root@eve-ng:~# telnet 192.168.82.93 32773
+  Switch>enable
+  Switch#configure terminal
+  Switch(config)#interface e0/1
+  Switch(config-if)#shutdown
+  Switch(config-if)#exit
+  Switch(config)#exit
+  Switch#exit
+  ```
+  2. Проверила пинги между клиентами
+  ```
+  root@eve-ng:~# telnet 192.168.82.93 32769
+  VPCS> ping 10.0.20.2
 
-84 bytes from 10.0.20.2 icmp_seq=1 ttl=63 time=6.417 ms
-84 bytes from 10.0.20.2 icmp_seq=2 ttl=63 time=4.459 ms
-84 bytes from 10.0.20.2 icmp_seq=3 ttl=63 time=4.158 ms
-84 bytes from 10.0.20.2 icmp_seq=4 ttl=63 time=4.207 ms
-84 bytes from 10.0.20.2 icmp_seq=5 ttl=63 time=3.226 ms
-```
+  84 bytes from 10.0.20.2 icmp_seq=1 ttl=63 time=6.417 ms
+  84 bytes from 10.0.20.2 icmp_seq=2 ttl=63 time=4.459 ms
+  84 bytes from 10.0.20.2 icmp_seq=3 ttl=63 time=4.158 ms
+  84 bytes from 10.0.20.2 icmp_seq=4 ttl=63 time=4.207 ms
+  84 bytes from 10.0.20.2 icmp_seq=5 ttl=63 time=3.226 ms
+  ```
