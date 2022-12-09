@@ -124,15 +124,18 @@ Router(config)#exit
 ```
 
 ## Проверка
-STP:
+* STP:
 
+на S1
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
 
+на S2
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206616074-26672755-5485-4a9f-900c-326738b8d228.png">
 
 Видно, что выбрался правильный рут и заблочился нужный линк.
 
-Пинги:
+
+* Пинги:
 
 с VPC1 на VPC2
 ```
@@ -190,7 +193,7 @@ VPCS> ping 10.0.20.100
 ```
 
 
-Отказоустойчивость:
+* Отказоустойчивость:
 1. Отключила интервейс между S0 и S1
 ```
 root@eve-ng:~# telnet 192.168.82.93 32773
