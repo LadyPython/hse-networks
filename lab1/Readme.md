@@ -127,8 +127,12 @@ Router(config-subif)#exit
 
 ## Проверка
 STP:
-<img width="300" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
 
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206615210-0a6c16a4-ed37-4250-b1b7-3bd3559df204.png">
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/6313540/206616074-26672755-5485-4a9f-900c-326738b8d228.png">
+
+Видно, что выбрался правильный рут и заблочился нужный линк.
 
 Пинги:
 
