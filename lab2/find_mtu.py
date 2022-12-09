@@ -10,7 +10,7 @@ class FindMinMTU:
         self._high_mtu = 100000
 
     def check_mtu_packet_size(self, packet_size, timeout=50) -> bool:
-        command = f'ping -D -c 1 -s {packet_size} -t {timeout} {self.host}'
+        command = f'ping -M do -c 1 -s {packet_size} -w {timeout} {self.host}'
         print('.', end='')
         p = subprocess.Popen(command,
                              stdout=subprocess.PIPE,
