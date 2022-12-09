@@ -113,11 +113,11 @@ Router(config)#interface e0/0
 Router(config-if)#no shutdown
 Router(config-if)#exit
 Router(config)#interface e0/0.10
-Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#encapsulation dot1q 10
 Router(config-subif)#ip address 10.0.10.100 255.255.255.0
 Router(config-subif)#exit
 Router(config)#interface e0/0.20
-Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#encapsulation dot1q 20
 Router(config-subif)#ip address 10.0.20.100 255.255.255.0
 Router(config-subif)#exit
 Router(config)#exit
