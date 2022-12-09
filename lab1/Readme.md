@@ -45,7 +45,6 @@ Switch(config-if)#switchport mode trunk
 Switch(config-if)#switchport trunk allowed vlan 10,20
 Switch(config-if)#exit
 Switch(config)#exit
-Switch#exit
 ```
 
 ### S2 (Коммутатор уровня доступ)
@@ -72,7 +71,6 @@ Switch(config-if)#switchport mode trunk
 Switch(config-if)#switchport trunk allowed vlan 10,20
 Switch(config-if)#exit
 Switch(config)#exit
-Switch#exit
 ```
 
 
@@ -104,7 +102,6 @@ Switch(config)#spanning-tree mode pvst
 Switch(config)#spanning-tree extend system-id
 Switch(config)#spanning-tree vlan 10,20 priority 0
 Switch(config)#exit
-Switch#exit
 ```
 
 ### R (Маршрутизатор)
@@ -123,6 +120,7 @@ Router(config)#interface e0/0.20
 Router(config-subif)#encapsulation dot1Q 20
 Router(config-subif)#ip address 10.0.20.100 255.255.255.0
 Router(config-subif)#exit
+Router(config)#exit
 ```
 
 ## Проверка
