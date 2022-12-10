@@ -1,4 +1,4 @@
-# Реализация небольшой сети офиса
+# Модернизация сети офиса
 ## Топология
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/6313540/206864399-c65a67c9-2f4d-433a-bbf2-e31eb4f142a7.png">
 
