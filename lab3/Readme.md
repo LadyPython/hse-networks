@@ -40,7 +40,7 @@ Router(config-if)#no shutdown
 Router(config-if)#ip address 10.0.0.100 255.255.255.0
 Router(config-if)#ip nat outside
 Router(config-if)#exit
-Router(config)#ip nat pool pool 10.0.0.100 10.0.0.100 netmask 255.255.255.0
+Router(config)#ip nat pool pool 10.0.0.100 10.0.0.200 netmask 255.255.255.0
 Router(config)#access-list 100 permit ip 10.0.10.0 0.0.0.255 any
 Router(config)#access-list 100 permit ip 10.0.20.0 0.0.0.255 any
 Router(config)#ip nat inside source list 100 pool pool
@@ -107,5 +107,23 @@ DDORA IP 10.0.20.11/24 GW 10.0.20.100
   ```
   
 * Пинги и NAT:
-  1. Посылаем пинги в VPC на R0. 
-  2. Смотрим в WireShark, что адрес, с которого роутер их получает транслирован.
+  1. Пинги c VPC1 на R0:
+  ```
+  VPCS> ping 10.0.0.1
+
+  84 bytes from 10.0.0.1 icmp_seq=1 ttl=254 time=1.684 ms
+  84 bytes from 10.0.0.1 icmp_seq=2 ttl=254 time=2.010 ms
+  84 bytes from 10.0.0.1 icmp_seq=3 ttl=254 time=4.277 ms
+  84 bytes from 10.0.0.1 icmp_seq=4 ttl=254 time=2.571 ms
+  84 bytes from 10.0.0.1 icmp_seq=5 ttl=254 time=2.332 ms
+  ```
+  2. Смотрим в Wireshark на e0/0 у R0, что адрес, с которого роутер их получает, транслирован:
+  <img width="1000" alt="image" src="https://user-images.githubusercontent.com/6313540/206865693-8dd6d393-84a0-4678-8ae4-f4595872d9e3.png">
+  3. Можно еще посмотреть трансляцию на роутере:
+  
+  ```
+  Router#show ip nat translations 
+  Pro Inside global      Inside local       Outside local      Outside global
+  --- 10.0.0.100         10.0.10.11         ---                ---
+  --- 10.0.0.101         10.0.20.11         ---                ---
+  ```
