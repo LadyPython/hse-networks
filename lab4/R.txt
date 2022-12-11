@@ -1,0 +1,56 @@
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+ip source-route
+!
+!
+!
+!         
+ip cef    
+multilink bundle-name authenticated
+!         
+!         
+!         
+!         
+!         
+!         
+interface Ethernet0/0
+ ip address 10.0.1.1 255.255.255.0
+!         
+interface Ethernet0/1
+ ip address 10.0.2.1 255.255.255.0
+!         
+interface Ethernet0/2
+ ip address 10.0.3.1 255.255.255.0
+!         
+interface Ethernet0/3
+ no ip address
+ shutdown 
+!         
+ip forward-protocol nd
+!         
+no ip http server
+!         
+!         
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login    
+!         
+exception data-corruption buffer truncate
+end  
